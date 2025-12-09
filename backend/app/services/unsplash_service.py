@@ -16,6 +16,10 @@ class UnsplashService:
     
     async def get_random_photos(self, count: int = 30) -> List[DiscoverItem]:
         """Obtiene fotos aleatorias de Unsplash"""
+        if not self.access_key:
+            print("WARNING: No Unsplash access key configured")
+            return []
+            
         async with httpx.AsyncClient() as client:
             try:
                 response = await client.get(
@@ -29,6 +33,7 @@ class UnsplashService:
                 return [self._transform_photo(photo) for photo in photos]
             except Exception as e:
                 print(f"Error fetching from Unsplash: {e}")
+                print(f"Access key present: {bool(self.access_key)}")
                 return []
     
     def _transform_photo(self, photo: dict) -> DiscoverItem:
