@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Modal, Form, Button, Alert, Nav, Dropdown } from 'react-bootstrap'
 import axios from 'axios'
+import { API_BASE_URL } from '../config/api'
 
-const API_URL = 'http://localhost:8000/api'
+const API_URL = API_BASE_URL + '/api'
 
 function UserAuth() {
   const [showModal, setShowModal] = useState(false)

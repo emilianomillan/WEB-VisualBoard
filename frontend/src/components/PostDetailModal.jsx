@@ -1,6 +1,7 @@
 import React from 'react'
 import { Modal, Button, Badge } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import { API_BASE_URL } from '../config/api'
 
 function PostDetailModal({ show, onHide, post, currentUser }) {
   const navigate = useNavigate()
@@ -29,7 +30,7 @@ function PostDetailModal({ show, onHide, post, currentUser }) {
   const handleDelete = async () => {
     if (window.confirm('¿Estás seguro de que quieres eliminar este post?')) {
       try {
-        const response = await fetch(`http://localhost:8000/api/posts/${post.id}`, {
+        const response = await fetch(`${API_BASE_URL}/api/posts/${post.id}`, {
           method: 'DELETE',
           headers: {
             'X-User-Id': currentUser
