@@ -49,10 +49,12 @@ class UnsplashService:
     
     async def check_health(self) -> bool:
         """Verifica si el servicio de Unsplash está disponible"""
+        if not self.access_key:
+            return False
         try:
             async with httpx.AsyncClient(timeout=5.0) as client:
                 response = await client.get(
-                    f"{self.BASE_URL}/",
+                    f"{self.BASE_URL}/photos/random?count=1",
                     headers=self.headers
                 )
                 return response.status_code == 200
