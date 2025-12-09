@@ -5,6 +5,7 @@ import uuid
 from datetime import datetime
 from typing import Optional
 import shutil
+from app.core.config import settings
 
 router = APIRouter(prefix="/upload", tags=["upload"])
 
@@ -62,7 +63,7 @@ async def upload_image(file: UploadFile = File(...)):
         
         return {
             "success": True,
-            "image_url": f"http://localhost:8000{image_url}",
+            "image_url": f"{settings.BASE_URL}{image_url}",
             "filename": unique_filename,
             "size": os.path.getsize(file_path)
         }

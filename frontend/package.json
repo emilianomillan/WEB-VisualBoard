@@ -4,7 +4,7 @@
   "description": "Visual Board - Pinterest-inspired web application",
   "private": true,
   "type": "module",
-  "homepage": "https://DabtcAvila.github.io/Web-VisualBoard",
+  "homepage": "https://DabtcAvila.github.io/WEB-VisualBoard",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

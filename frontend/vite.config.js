@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Web-VisualBoard/', // Base path para GitHub Pages
+  base: '/WEB-VisualBoard/', // Base path para GitHub Pages
   server: {
     port: 5173,
     proxy: {

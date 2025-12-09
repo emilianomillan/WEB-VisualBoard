@@ -17,7 +17,8 @@ router = APIRouter(prefix="/image-health", tags=["image-health"])
 async def check_image_url(url: str) -> bool:
     """Verifica si una URL de imagen es accesible"""
     # Si es una URL local (archivos subidos), verificar si el archivo existe
-    if url.startswith("http://localhost:8000/api/upload/images/"):
+    if url.startswith("http://localhost:8000/api/upload/images/") or \
+       url.startswith("https://visual-board-api.onrender.com/api/upload/images/"):
         filename = url.split("/")[-1]
         file_path = os.path.join("uploads", filename)
         return os.path.exists(file_path)

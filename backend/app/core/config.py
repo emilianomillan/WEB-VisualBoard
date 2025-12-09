@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     SECRET_KEY: str = os.getenv("SECRET_KEY", "your-secret-key-here-change-in-production")
     DEBUG: bool = os.getenv("DEBUG", "False").lower() == "true"
     
+    # Base URL for the API (for image URLs, etc.)
+    BASE_URL: str = os.getenv("BASE_URL", "http://localhost:8000")
+    
     # Handle Render's postgres:// vs postgresql:// issue
     DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://postgres:password@localhost/visualboard")
     if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
