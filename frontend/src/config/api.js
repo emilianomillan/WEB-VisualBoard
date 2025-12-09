@@ -1,10 +1,10 @@
 // Configuración de API para diferentes entornos
 const isDevelopment = import.meta.env.MODE === 'development'
 
-// URL del backend - CAMBIA ESTO CON TU URL DE RENDER
+// URL del backend - Backend desplegado en Render
 export const API_BASE_URL = isDevelopment 
   ? 'http://localhost:8000' 
-  : 'https://TU-SERVICIO.onrender.com' // ⬅️ PON AQUÍ TU URL DE RENDER
+  : 'https://visual-board-api.onrender.com' // Backend en Render
 
 export const getApiUrl = (endpoint) => {
   return `${API_BASE_URL}${endpoint}`
