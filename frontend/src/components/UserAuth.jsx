@@ -103,7 +103,11 @@ function UserAuth() {
     sessionStorage.removeItem('userData')
     sessionStorage.removeItem('userId')
     setCurrentUser(null)
-    window.location.reload()
+    
+    // Delay para evitar crash visual
+    setTimeout(() => {
+      window.location.reload()
+    }, 300)
   }
 
   const checkUsernameAvailability = async (username) => {
