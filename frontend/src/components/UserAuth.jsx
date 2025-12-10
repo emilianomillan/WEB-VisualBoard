@@ -10,6 +10,7 @@ function UserAuth() {
   const [isLogin, setIsLogin] = useState(true)
   const [currentUser, setCurrentUser] = useState(null)
   const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
   const [loading, setLoading] = useState(false)
   
   const [formData, setFormData] = useState({
@@ -38,6 +39,7 @@ function UserAuth() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
+    setSuccess('')
     setLoading(true)
 
     try {
@@ -74,8 +76,18 @@ function UserAuth() {
         username_or_email: ''
       })
       
-      // Recargar para actualizar headers
-      window.location.reload()
+      // Mostrar mensaje de éxito en lugar de recargar inmediatamente
+      if (!isLogin) {
+        setSuccess('¡Cuenta creada exitosamente! Redirigiendo...')
+        setLoading(false)
+        // Para registro exitoso, mostrar mensaje antes de recargar
+        setTimeout(() => {
+          window.location.reload()
+        }, 1500)
+      } else {
+        // Para login, recargar inmediatamente
+        window.location.reload()
+      }
     } catch (err) {
       if (err.response?.data?.detail) {
         setError(err.response.data.detail)
@@ -148,6 +160,12 @@ function UserAuth() {
           {error && (
             <Alert variant="danger" dismissible onClose={() => setError('')}>
               {error}
+            </Alert>
+          )}
+          
+          {success && (
+            <Alert variant="success">
+              {success}
             </Alert>
           )}
           
@@ -250,6 +268,7 @@ function UserAuth() {
                 onClick={() => {
                   setIsLogin(!isLogin)
                   setError('')
+                  setSuccess('')
                   setFormData({
                     username: '',
                     email: '',
