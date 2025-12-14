@@ -1,123 +1,47 @@
 #   Pagina WEB: VisualBoard
 <div align="center">
 
-### Proyecto Integrador — COM-11117: Introducción al Desarrollo Web
+### Segundo Proyecto Integrador — COM-11117: Introducción al Desarrollo Web
 
 [![ITAM](https://img.shields.io/badge/ITAM-Otoño%202025-00524E?style=for-the-badge)](https://www.itam.mx)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.8-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
 ---
 
-**Aplicación web inspirada en Pinterest** para gestionar y descubrir contenido visual.  
-Desarrollada como proyecto integrador del curso de Desarrollo Web.
+**Visual Board** es una aplicación web inspirada en la experiencia de usuario de Pinterest. Su objetivo principal es permitir a los usuarios gestionar, compartir y descubrir imágenes en un contexto de red social.
 
-[🚀 Ver Demo en Vivo](#) · [📡 API Health Check](#) · [📖 Documentación API](#)
+El proyecto fue desarrollado en dos estructuras:
 
-</div>
+- **Backend (Python / FastAPI):** La API gestiona la lógica de negocio, la persistencia de datos en PostgreSQL y la integración con servicios externos.
+- **Frontend (React):** Interfaz de usuario reactiva e interactiva, diseñada con Bootstrap para garantizar la adaptabilidad y responsabilidad en dispositivos móviles y de escritorio.
 
----
-
-## 📋 Tabla de Contenidos
-
-- [Resumen del Proyecto](#-resumen-del-proyecto)
-- [Características](#-características)
-- [Tecnologías](#-tecnologías)
-- [Arquitectura](#-arquitectura)
-- [Instalación y Configuración](#-instalación-y-configuración)
-  - [Requisitos Previos](#requisitos-previos)
-  - [Frontend](#frontend)
-  - [Backend](#backend)
-- [Variables de Entorno](#-variables-de-entorno)
-- [Endpoints de la API](#-endpoints-de-la-api)
-- [Despliegue](#-despliegue)
-- [Autores](#-autores)
-
----
-
-## 🎯 Resumen del Proyecto
-
-**Visual Board** es una aplicación web fullstack que replica la experiencia de Pinterest, permitiendo a los usuarios crear, explorar y gestionar colecciones de imágenes de manera intuitiva.
-
-El proyecto integra conocimientos de:
-- Desarrollo frontend con **React** y **Bootstrap**
-- Desarrollo backend con **FastAPI** y **PostgreSQL**
-- Consumo y transformación de APIs externas (**Unsplash**)
-- Control de versiones colaborativo con **Git/GitHub**
-- Despliegue de aplicaciones en la nube
+El sistema cuenta con tres módulos principales:
+1. **Gestión de Contenido (CRUD):** Los usuarios pueden subir sus propias imágenes, editarlas y organizarlas mediante un sistema de etiquetado.
+2. **Descubrimiento:** Integración con la API de Unsplash para ofrecer un feed infinito de imágenes.
+3. **Optimización:** Implementación de caché local (`localStorage`) para mejorar la velocidad de carga y reducir el consumo de datos.
 
 ---
 
 ## ✨ Características
 
 ### Frontend
-- 🖼️ **Mosaico dinámico** de imágenes estilo Pinterest
-- 📱 **Diseño responsivo** adaptable a móviles y escritorio
-- 📝 **CRUD completo** para gestión de posts
-- 🔍 **Sección Descubrimiento** con imágenes aleatorias de Unsplash
-- 💾 **Caché inteligente** con localStorage y timestamps
-- 📄 **Paginación** del lado del cliente
-- 🔗 **OpenGraph** para compartir en redes sociales
+- **Mosaico dinámico** de imágenes estilo Pinterest
+- **Diseño responsivo** adaptable a móviles y escritorio
+- **CRUD completo** para gestión de posts
+- **Sección Descubrimiento** con imágenes aleatorias de Unsplash
+- **Caché** con localStorage y timestamps
+- **OpenGraph** para compartir en redes sociales
 
 ### Backend
-- ⚡ **API RESTful** con FastAPI
-- 🔐 **Autenticación por headers** para identificación de usuarios
-- 📊 **Paginación** en endpoints de listado
-- 🔄 **Integración con Unsplash** (datos transformados)
-- 🏥 **Health endpoint** con verificación de servicios externos
-- 🧪 **Pruebas unitarias** con pytest
-- 📚 **Documentación automática** con Swagger/OpenAPI
+- **API** con FastAPI
+- **Autenticación por headers** para identificación de usuarios
+- **Integración con Unsplash** 
 
 ---
 
-## 🛠️ Tecnologías
-
-| Capa | Tecnología | Versión |
-|------|------------|---------|
-| **Frontend** | React + Vite | 18.x |
-| **Estilos** | Bootstrap | 5.3.8 |
-| **Backend** | FastAPI | 0.100+ |
-| **Base de Datos** | PostgreSQL | 15+ |
-| **ORM** | SQLAlchemy | 2.x |
-| **Testing** | pytest | 7.x |
-| **API Externa** | Unsplash API | - |
-
----
-
-## 🏗️ Arquitectura
-
-```
-visual-board/
-├── frontend/                 # Aplicación React
-│   ├── public/
-│   ├── src/
-│   │   ├── components/       # Componentes reutilizables
-│   │   ├── pages/            # Vistas principales
-│   │   ├── hooks/            # Custom hooks
-│   │   ├── services/         # Llamadas a API
-│   │   └── utils/            # Funciones auxiliares
-│   ├── package.json
-│   └── vite.config.js
-│
-├── backend/                  # API FastAPI
-│   ├── app/
-│   │   ├── api/              # Endpoints
-│   │   ├── models/           # Modelos SQLAlchemy
-│   │   ├── schemas/          # Schemas Pydantic
-│   │   ├── services/         # Lógica de negocio
-│   │   └── core/             # Configuración
-│   ├── tests/                # Pruebas unitarias
-│   ├── requirements.txt
-│   └── main.py
-│
-└── README.md
-```
-
----
-
-## 🚀 Instalación y Configuración
+## Instalación y Configuración
 
 ### Requisitos Previos
 
@@ -131,126 +55,57 @@ visual-board/
 ### Frontend
 
 1. **Navegar al directorio del frontend:**
-   ```bash
    cd frontend
-   ```
 
 2. **Instalar dependencias:**
-   ```bash
    npm install
-   ```
 
 3. **Configurar variables de entorno:**
-   ```bash
    cp .env.example .env
-   # Editar .env con la URL de tu API
-   ```
+   # Editar .env con la URL de la API
 
 4. **Iniciar servidor de desarrollo:**
-   ```bash
    npm run dev
-   ```
 
 5. **Acceder a la aplicación:**
-   ```
    http://localhost:5173
-   ```
-
-#### Scripts disponibles
-
-| Comando | Descripción |
-|---------|-------------|
-| `npm run dev` | Inicia servidor de desarrollo |
-| `npm run build` | Genera build de producción |
-| `npm run preview` | Previsualiza build de producción |
-| `npm run lint` | Ejecuta linter |
 
 ---
 
 ### Backend
 
 1. **Navegar al directorio del backend:**
-   ```bash
    cd backend
-   ```
 
 2. **Crear y activar entorno virtual:**
-   ```bash
    python -m venv venv
    
-   # Windows
+   # En Windows
    venv\Scripts\activate
    
-   # macOS/Linux
+   # En macOS
    source venv/bin/activate
-   ```
 
 3. **Instalar dependencias:**
-   ```bash
    pip install -r requirements.txt
-   ```
 
 4. **Configurar variables de entorno:**
-   ```bash
    cp .env.example .env
-   # Editar .env con tus credenciales
-   ```
+   # Editar .env con las credenciales
 
 5. **Configurar base de datos:**
-   ```bash
    # Crear base de datos en PostgreSQL
    createdb visual_board
-   
-   # Ejecutar migraciones (si aplica)
-   alembic upgrade head
-   ```
 
 6. **Iniciar servidor:**
-   ```bash
    uvicorn main:app --reload --port 8000
-   ```
 
 7. **Acceder a la documentación:**
-   ```
-   http://localhost:8000/docs      # Swagger UI
-   http://localhost:8000/redoc     # ReDoc
-   ```
-
-#### Scripts disponibles
-
-| Comando | Descripción |
-|---------|-------------|
-| `uvicorn main:app --reload` | Inicia servidor en modo desarrollo |
-| `pytest` | Ejecuta pruebas unitarias |
-| `pytest --cov` | Ejecuta pruebas con cobertura |
+   http://localhost:8000/docs
 
 ---
 
-## 🔐 Variables de Entorno
-
-### Frontend (`.env`)
-
-```env
-VITE_API_URL=http://localhost:8000
-```
-
-### Backend (`.env`)
-
-```env
-# Base de datos
-DATABASE_URL=postgresql://usuario:contraseña@localhost:5432/visual_board
-
-# Unsplash API
-UNSPLASH_ACCESS_KEY=tu_access_key_aqui
-
-# Configuración
-DEBUG=True
-SECRET_KEY=tu_secret_key_aqui
-```
-
----
-
-## 📡 Endpoints de la API
+## Endpoints de la API
 
 ### Posts
 
@@ -275,29 +130,16 @@ SECRET_KEY=tu_secret_key_aqui
 |--------|----------|-------------|
 | `GET` | `/health` | Estado del servidor y servicios externos |
 
-### Headers requeridos
+---
 
-```http
-X-User-Id: <identificador_usuario>
-```
+## Enlaces del proyecto desplegado
+El proyecto se encuentra desplegado y accesible públicamente en:
 
-> ⚠️ Los endpoints de modificación (`PUT`, `PATCH`, `DELETE`) validan que el usuario sea el creador del post.
+**https://dabtcavila.github.io/Web-VisualBoard/my-posts**
 
 ---
 
-## ☁️ Despliegue
-
-### Frontend
-- **Plataforma:** GitHub Pages / Vercel / Netlify
-- **URL:** [Pendiente de configurar]
-
-### Backend
-- **Plataforma:** Heroku / Railway / Azure
-- **Health Check:** [Pendiente de configurar]
-
----
-
-## 👨‍💻 Autores
+## Autores
 
 <table>
   <tr>
@@ -307,7 +149,12 @@ X-User-Id: <identificador_usuario>
       <sub>197851</sub><br />
       <sub>Licenciatura en Ciencia de Datos</sub>
     </td>
-    <!-- Agregar más integrantes aquí -->
+    <td align="center">
+      <img src="https://via.placeholder.com/150" width="150px;" alt="Emiliano Sebastián Millán Giffard"/><br />
+      <sub><b>Emiliano Sebastián Millán Giffard</b></sub><br />
+      <sub>214360</sub><br />
+      <sub>Licenciatura en Ciencia de Datos</sub>
+    </td>
   </tr>
 </table>
 
