@@ -1,9 +1,7 @@
-# WEB-VisualBoard
+#   Pagina WEB: VisualBoard
 <div align="center">
 
-# 📌 Visual Board
-
-### Proyecto Integrador — COM-11117 Introducción al Desarrollo Web
+### Proyecto Integrador — COM-11117: Introducción al Desarrollo Web
 
 [![ITAM](https://img.shields.io/badge/ITAM-Otoño%202025-00524E?style=for-the-badge)](https://www.itam.mx)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
@@ -318,12 +316,3 @@ X-User-Id: <identificador_usuario>
 <div align="center">
 
 ### Instituto Tecnológico Autónomo de México
-
-**COM-11117 Introducción al Desarrollo Web**  
-Otoño 2025
-
----
-
-<sub>Hecho con ❤️ para el curso de Desarrollo Web</sub>
-
-</div>
