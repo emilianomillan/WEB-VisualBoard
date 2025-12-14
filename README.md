@@ -21,7 +21,7 @@ El sistema cuenta con tres módulos principales:
 
 ---
 
-## ✨ Características
+## Características
 
 ### Frontend
 - **Mosaico dinámico** de imágenes estilo Pinterest
@@ -52,53 +52,77 @@ El sistema cuenta con tres módulos principales:
 ### Frontend
 
 1. **Navegar al directorio del frontend:**
+   ```
    cd frontend
+   ```
 
 2. **Instalar dependencias:**
+   ```
    npm install
+   ```
 
 3. **Configurar variables de entorno:**
+   ```
    cp .env.example .env
-   # Editar .env con la URL de la API
+   # Editar .env con la URL de tu API
+   ```
 
 4. **Iniciar servidor de desarrollo:**
+   ```
    npm run dev
+   ```
 
 5. **Acceder a la aplicación:**
+   ```
    http://localhost:5173
+   ```
 
 ---
 
 ### Backend
 
 1. **Navegar al directorio del backend:**
+   ```
    cd backend
+   ```
 
 2. **Crear y activar entorno virtual:**
+   ```
    python -m venv venv
    
    # En Windows
    venv\Scripts\activate
    
-   # En macOS
+   # En macOS/Linux
    source venv/bin/activate
+   ```
 
 3. **Instalar dependencias:**
+   ```
    pip install -r requirements.txt
+   ```
 
 4. **Configurar variables de entorno:**
+   ```bash
    cp .env.example .env
-   # Editar .env con las credenciales
+   # Editar el ".env" con las credenciales
+   ```
 
 5. **Configurar base de datos:**
+   ```
    # Crear base de datos en PostgreSQL
    createdb visual_board
+   ```
 
 6. **Iniciar servidor:**
+   ```
    uvicorn main:app --reload --port 8000
+   ```
 
 7. **Acceder a la documentación:**
-   http://localhost:8000/docs
+   ```
+   http://localhost:8000/docs      # Swagger UI
+   ```
 
 ---
 
