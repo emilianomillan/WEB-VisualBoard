@@ -4,9 +4,6 @@
 ### Segundo Proyecto Integrador — COM-11117: Introducción al Desarrollo Web
 
 [![ITAM](https://img.shields.io/badge/ITAM-Otoño%202025-00524E?style=for-the-badge)](https://www.itam.mx)
-[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.8-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
 ---
 
